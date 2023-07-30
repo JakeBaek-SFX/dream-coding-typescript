@@ -19,7 +19,7 @@
     }
 
     push(value: T) {
-      const node: StackNode<T> = {value, next: this.head};
+      const node  = {value, next: this.head};
       this.head = node;
       this._size++;
     }
@@ -36,16 +36,28 @@
     }
   }
 
-  const stack = new StackImpl();
+  const stack = new StackImpl<string>();
   stack.push('jake');
-  stack.push(1);
-  stack.push(true);
+
   stack.push('baek');
 
   stack.push('is');
 
   stack.push('hot');
   console.log(stack.pop());
-  console.log(stack.pop()); console.log(stack.pop());
+  console.log(stack.pop()); 
+  console.log(stack.pop());
+
+  const stack2 = new StackImpl<number>();
+  stack2.push(1);
+
+  stack2.push(2);
+
+  stack2.push(3);
+
+  stack2.push(4);
+  console.log(stack2.pop());
+  console.log(stack2.pop()); 
+  console.log(stack2.pop());
   
 }
